@@ -2,8 +2,8 @@ using Gtk 4.0;
 using Adw 1;
 
 template LearnrustgtkWindow : Adw.ApplicationWindow {
-  default-width: 600;
-  default-height: 300;
+  default-width: 650;
+  default-height: 700;
 
   Box {
     orientation: vertical;
@@ -16,15 +16,39 @@ template LearnrustgtkWindow : Adw.ApplicationWindow {
       }
     }
 
-    Label label {
-      label: "Hello, World!";
-      vexpand: true;
 
+    Label label {
+      label: "Watson, come here, I want to see you.";
+      vexpand: true;
       styles [
         "title-1",
       ]
     }
-  }
+
+    Box {
+      orientation: vertical;
+      valign: center;
+      halign: center;
+      spacing: 20;
+
+      Entry entry {
+        halign: center;
+        valign: center;
+      }
+
+      Button inc_btn {
+        label: "Increment";
+        halign: center;
+        styles ["pill"]
+      }
+
+      Button dec_btn {
+        label: "Decrement";
+        halign: center;
+        styles ["pill"]
+      }
+    }
+
 }
 
 menu primary_menu {

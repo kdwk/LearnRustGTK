@@ -1,6 +1,15 @@
 pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 gnome = import('gnome')
 
+blueprints = custom_target(
+  'blueprints',
+  input: files(
+    'window.blp',
+  ),
+  output: '.',
+  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+)
+
 gnome.compile_resources('learnrustgtk',
   'learnrustgtk.gresource.xml',
   gresource_bundle: true,
@@ -54,13 +63,4 @@ cargo_build = custom_target(
     cargo_bin, 'build',
     cargo_opt, '&&', 'cp', 'src' / rust_target / meson.project_name(), '@OUTPUT@',
   ]
-)
-
-blueprints = custom_target(
-  'blueprints',
-  input: files(
-    'window.blp',
-  ),
-  output: '.',
-  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
