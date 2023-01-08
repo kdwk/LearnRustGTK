@@ -1,0 +1,4 @@
+data/com.github.kdwk.LearnRustGTK.desktop.in
+data/com.github.kdwk.LearnRustGTK.appdata.xml.in
+data/com.github.kdwk.LearnRustGTK.gschema.xml
+src/window.ui

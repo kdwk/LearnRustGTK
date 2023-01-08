@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=learnrustgtk
+Exec=learnrustgtk
+Icon=com.github.kdwk.LearnRustGTK
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true
